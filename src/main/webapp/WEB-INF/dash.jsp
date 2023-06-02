@@ -15,8 +15,8 @@
 	<div class="navBar">
 		<p><a class="addSong" href="songs/new">Add New</a></p>
 		<p><a href="songs/top-ten">Top Songs</a></p>
-		<form class = "form"  id = "searchForm" action = "/search" method = "post">
-			<input id = "searchBox" type = "text" name = "query">
+		<form class = "form"  id = "searchForm" action = "/search" method = "get">
+			<input id = "searchBox" type = "text" name = "artist">
 			<input class="btn" id ="submit" type = "submit" value="Search"/>
 		</form>
 	</div>

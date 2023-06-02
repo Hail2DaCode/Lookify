@@ -65,13 +65,13 @@ public class SongController {
 		model.addAttribute(song);
 		return "show.jsp";
 	}
-	@PostMapping("/search")
-	public String search(@RequestParam(value="query") String query) {
-			return "redirect:/search/" + query;
-	}
-	@GetMapping("/search/{query}")
+//	@PostMapping("/search")
+//	public String search(@RequestParam(value="query") String query) {
+//			return "redirect:/search/" + query;
+//	}
+	@GetMapping("/search")
 	public String showSongsByArtist(Model model, 
-			@PathVariable("query") String search) {
+			@RequestParam(value="artist", required = false) String search) {
 		List<Song> songs = songService.allSongsByArtist(search);
 		model.addAttribute("songs", songs);
 		return "artist.jsp";
